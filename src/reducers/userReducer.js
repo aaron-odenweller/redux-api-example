@@ -10,7 +10,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         users: [...action.payload],
-      };
+      }; //NEVER make a server request inside of here.  You want to do that in the ActionCreator (inside of the Thunk call)
 
     case ADD_USER:
       return {

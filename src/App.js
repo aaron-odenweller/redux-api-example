@@ -5,19 +5,15 @@ import Users from "./Users";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import { Spring } from "react-spring/renderprops";
+import { Spring } from "react-spring/renderprops"; //Anything you want to animate should be wrapped in a Sprint component.
 
 class App extends React.Component {
   render() {
     return (
-      // the provider wraps the applicaiton
+      // the provider wraps the applicaiton.  This is the first thing you probably should do when implementing React
       <Provider store={store}>
         <div className="App">
-          <Spring
-            from={{ opacity: 0, marginLeft: 100 }}
-            to={{ opacity: 1, marginLeft: 0 }}
-            config={{ duration: 1000, delay: 200 }}
-          >
+          <Spring from={{ opacity: 0, marginLeft: 100 }} to={{ opacity: 1, marginLeft: 0 }} config={{ duration: 1000, delay: 200 }}>
             {(props) => (
               <header className="App-header" style={props}>
                 <h1>Form State, Spread Syntax, Ternary Operator</h1>
@@ -25,11 +21,7 @@ class App extends React.Component {
             )}
           </Spring>
 
-          <Spring
-            from={{ opacity: 0, marginRight: 100 }}
-            to={{ opacity: 1, marginRight: 0 }}
-            config={{ duration: 1000, delay: 200 }}
-          >
+          <Spring from={{ opacity: 0, marginRight: 100 }} to={{ opacity: 1, marginRight: 0 }} config={{ duration: 1000, delay: 200 }}>
             {(props) => (
               <div style={props}>
                 <AddUser />

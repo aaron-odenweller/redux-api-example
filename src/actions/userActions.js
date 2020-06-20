@@ -4,7 +4,9 @@ import axios from "axios";
 const url = "https://reqres.in/api/users/";
 
 export function fetchUsers() {
+  //Action Creator
   return function (dispatch) {
+    //redux Thunk (this is where you do the API call)
     const getData = async () => {
       try {
         let res = await axios.get(url);
